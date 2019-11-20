@@ -145,10 +145,10 @@
   dependencies:
     execa "^2.0.0"
 
-"@sweetalert2/stylelint-config@^1.1.5":
-  version "1.1.13"
-  resolved "https://registry.yarnpkg.com/@sweetalert2/stylelint-config/-/stylelint-config-1.1.13.tgz#029b1df259a4a99ada5f6f9c0e3c6a6d87acaa84"
-  integrity sha512-jkDcS2lP2KBw9R0GzJqgXfIiez+vSOvvU/fLa2Ji60Tm4H28zXywUeBqyff0Qst80ZKkrgvSoi2XuY4WTe1fvQ==
+"@sweetalert2/stylelint-config@^1.1.22":
+  version "1.1.22"
+  resolved "https://registry.yarnpkg.com/@sweetalert2/stylelint-config/-/stylelint-config-1.1.22.tgz#55cfcf184148f370f22358ced8f533bc2d64f0cd"
+  integrity sha512-2PYvLYiCrzq7h5wiuwir7m0ZKf62Da2bAWYcN1x5vERNVM52USoGGtXL5Sz0lpmAP3WcSUTvLKsU0fNKVUfGZw==
   dependencies:
     stylelint-config-property-sort-order-smacss "^5.0.0"
     stylelint-config-standard "^19.0.0"
