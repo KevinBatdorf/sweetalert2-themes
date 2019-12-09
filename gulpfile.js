@@ -11,6 +11,8 @@ const stylelint = require('gulp-stylelint')
 const browserSync = require('browser-sync').create()
 const packageJson = require('./package.json')
 const version = process.env.VERSION || packageJson.version
+const inject = require('gulp-inject-string')
+const gulpif = require('gulp-if')
 
 const banner = `/*
 * ${packageJson.name} v${version}
@@ -52,7 +54,19 @@ gulp.task('css.min', function minify () {
     .pipe(gulp.dest('./'))
 })
 
-gulp.task('build', gulp.series('sass', 'css.min'))
+gulp.task('stub-html', () => {
+  const theme = process.argv[4] || 'default'
+
+  return gulp.src('./index-stub.html')
+    .pipe(gulpif(
+      (theme !== 'default'),
+      inject.replace('<!-- theme -->', `<option selected="true" value="${theme}">${theme}</option>`)
+    ))
+    .pipe(rename('index.html'))
+    .pipe(gulp.dest('./'))
+})
+
+gulp.task('build', gulp.series('sass', 'css.min', 'stub-html'))
 
 gulp.task('default', gulp.series('build'))
 

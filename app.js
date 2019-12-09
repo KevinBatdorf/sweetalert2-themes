@@ -8,14 +8,6 @@
 
   // Theme selector
   const themeSelector = document.querySelector('#theme-selector')
-  let themeOption = themeSelector.querySelector('option[value="' + theme + '"]')
-  if (!themeOption) {
-    themeOption = document.createElement('option')
-    themeOption.setAttribute('value', theme)
-    themeOption.setAttribute('selected', true)
-    themeOption.innerHTML = theme
-    themeSelector.appendChild(themeOption)
-  }
   themeSelector.querySelector('[value="' + theme + '"]').setAttribute('selected', true)
   themeSelector.addEventListener('change', () => {
     location.assign('/?theme=' + themeSelector.value)
